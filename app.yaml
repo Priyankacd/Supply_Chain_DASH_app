@@ -1,0 +1,8 @@
+command: ["gunicorn", "app:server", "--bind", "0.0.0.0:8000", "--workers", "2", "--timeout", "120"]
+env:
+  - name: DATABRICKS_DATA_TABLE
+    value: main.supply_chain.otd_cases
+  - name: DATABRICKS_AUDIT_TABLE
+    value: main.supply_chain.otd_case_audit
+  - name: APP_USER_NAME
+    value: dash.app
